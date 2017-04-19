@@ -5,6 +5,7 @@ import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -21,14 +22,17 @@ public class GameResultsListActivity extends AppCompatActivity {
         Bundle extras = intent.getExtras();
         GameResult pGamesResult = extras.getParcelable("SingleGameResultObject");
 
-
-        
 //          trying to do it for arraylist??
 //        GamesList gamesList = extras.getParcelableArrayList("gamesList");
 
+        ArrayList<GameResult> tempList = new ArrayList<GameResult>();
+        tempList.add(pGamesResult);
 
+        GamesListAdaptor gamesListAdaptor = new GamesListAdaptor(this, tempList);
 
-
+        ListView listView = (ListView) findViewById(R.id.games_results_list);
+        listView.setAdapter(gamesListAdaptor);
 
     }
 }
+
