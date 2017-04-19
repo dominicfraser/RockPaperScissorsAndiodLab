@@ -11,6 +11,7 @@ import org.w3c.dom.Text;
 public class SelectionActivity extends AppCompatActivity {
 
     private TextView title_and_result;
+    private TextView computerChoice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,16 +20,20 @@ public class SelectionActivity extends AppCompatActivity {
         Log.d(getClass().toString(), "onCreate for Selection");
 
         title_and_result = (TextView) findViewById(R.id.title_and_result);
+        computerChoice = (TextView) findViewById(R.id.computerChoice);
     }
 
     public void onRockClick(View text){
         Log.d(getClass().toString(), "onRockClick clicked");
 
         String selection = "Rock";
-
-        String result = GameLogic.WinChecker(selection,GameLogic.computerChoiceMaker());
+        String computerSelection = GameLogic.computerChoiceMaker();
+        String result = GameLogic.WinChecker(selection, computerSelection);
 
         title_and_result.setText(result);
+        computerChoice.setText("Computer chose " + computerSelection);
+
+
 
     }
 }
