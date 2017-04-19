@@ -31,22 +31,31 @@ public class SelectionActivity extends AppCompatActivity {
         String result = GameLogic.WinChecker(selection, computerSelection);
 
         title_and_result.setText(result);
-        computerChoice.setText("Computer chose " + computerSelection);
+        computerChoice.setText("Computer chose: " + computerSelection);
 
 
 
     }
-}
 
-//
-//    public void onWordsEntered(View text){
-//        Log.d(getClass().toString(), "show uniq count button pressed");
-//
-//        String words = enteredWords.getText().toString();
-//
-//        Intent intent = new Intent(this,UniqWordsDisplayActivity.class);
-//
-//        intent.putExtra("words",words);
-//
-//        startActivity(intent);
-//    }
+    public void onPaperClick(View text){
+        Log.d(getClass().toString(), "onPaperClick clicked");
+
+        String selection = "Paper";
+        String computerSelection = GameLogic.computerChoiceMaker();
+        String result = GameLogic.WinChecker(selection, computerSelection);
+
+        title_and_result.setText(result);
+        computerChoice.setText("Computer chose: " + computerSelection);
+    }
+
+    public void onScissorsClick(View text){
+        Log.d(getClass().toString(), "onScissorsClick clicked");
+
+        String selection = "Scissors";
+        String computerSelection = GameLogic.computerChoiceMaker();
+        String result = GameLogic.WinChecker(selection, computerSelection);
+
+        title_and_result.setText(result);
+        computerChoice.setText("Computer chose: " + computerSelection);
+    }
+}
