@@ -19,5 +19,23 @@ public class GameLogicTest {
         assertEquals( "Computer Wins!",GameLogic.WinChecker("Scissors","Rock") );
     }
 
-    
+    @Test
+    public void testingGameLogicPaper(){
+        assertEquals( "Draw",GameLogic.WinChecker("Paper","Paper") );
+        assertEquals( "Computer Wins!",GameLogic.WinChecker("Paper","Scissors") );
+        assertEquals( "Player Wins!",GameLogic.WinChecker("Paper","Rock") );
+        assertEquals( "Player Wins!",GameLogic.WinChecker("Scissors","Paper") );
+        assertEquals( "Computer Wins!",GameLogic.WinChecker("Rock","Paper") );
+    }
+
+    @Test
+    public void testingGameLogicScissor(){
+        assertEquals( "Draw",GameLogic.WinChecker("Scissors","Scissors") );
+        assertEquals( "Computer Wins!",GameLogic.WinChecker("Scissors","Rock") );
+        assertEquals( "Player Wins!",GameLogic.WinChecker("Scissors","Paper") );
+        assertEquals( "Player Wins!",GameLogic.WinChecker("Rock","Scissors") );
+        assertEquals( "Computer Wins!",GameLogic.WinChecker("Paper","Scissors") );
+    }
+
+
 }
