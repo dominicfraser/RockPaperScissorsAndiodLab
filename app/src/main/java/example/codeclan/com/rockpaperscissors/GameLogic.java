@@ -9,8 +9,8 @@ import java.util.Random;
 public class GameLogic {
 
 
-    public static String computerChoiceMaker(){
-        String[] choices = {"Rock","Paper","Scissors"};
+    public static String computerChoiceMaker() {
+        String[] choices = {"Rock", "Paper", "Scissors"};
         Random numbers = new Random();
         int randomIndex = numbers.nextInt(3);
 
@@ -20,40 +20,24 @@ public class GameLogic {
 
     }
 
-    public static String WinChecker(String userChoice, String computerChoice){
-        if(userChoice.equals("Rock")){
-            if(computerChoice.equals("Rock")){
-                return "Draw";
-            }
-            else if(computerChoice.equals("Paper")){
-                return "Computer Wins!";
-            }
-            else if(computerChoice.equals("Scissors") ){
-                return "Player Wins!";
-            }
+    public static String WinChecker(String userChoice, String computerChoice) {
+        switch (userChoice) {
+            case "Rock":
+                if (!computerChoice.equals("Rock")) {
+                    return (computerChoice.equals("Paper") ? "Computer Wins!" : "Player Wins!");
+                }
+                break;
+            case "Paper":
+                if (!computerChoice.equals("Paper")) {
+                    return (computerChoice.equals("Rock") ? "Player Wins!" : "Computer Wins!");
+                }
+                break;
+            case "Scissors":
+                if (!computerChoice.equals("Scissors")) {
+                    return (computerChoice.equals("Rock") ? "Computer Wins!" : "Player Wins!");
+                }
+                break;
         }
-        else if(userChoice.equals("Paper")){
-            if(computerChoice.equals("Rock") ){
-                return "Player Wins!";
-            }
-            else if(computerChoice.equals("Paper")){
-                return "Draw";
-            }
-            else if(computerChoice.equals("Scissors")){
-                return "Computer Wins!";
-            }
-        }
-        else{
-            if(computerChoice.equals("Rock") ){
-                return "Computer Wins!";
-            }
-            else if(computerChoice.equals("Paper") ){
-                return "Player Wins!";
-            }
-            else if(computerChoice.equals("Scissors")){
-                return "Draw";
-            }
-        }
-        return null;
+        return "Draw";
     }
 }
