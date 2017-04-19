@@ -1,7 +1,6 @@
 package example.codeclan.com.rockpaperscissors;
 
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,10 +27,10 @@ public class GameResultsListActivity extends AppCompatActivity {
         ArrayList<GameResult> tempList = new ArrayList<GameResult>();
         tempList.add(pGamesResult);
 
-        GamesListAdaptor gamesListAdaptor = new GamesListAdaptor(this, tempList);
+        GamesListAdapter gamesListAdapter = new GamesListAdapter(this, tempList);
 
         ListView listView = (ListView) findViewById(R.id.games_results_list);
-        listView.setAdapter(gamesListAdaptor);
+        listView.setAdapter(gamesListAdapter);
 
     }
 }

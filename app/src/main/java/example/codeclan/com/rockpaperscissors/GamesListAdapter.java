@@ -18,9 +18,9 @@ import org.w3c.dom.Text;
  * Created by user on 19/04/2017.
  */
 
-public class GamesListAdaptor extends ArrayAdapter<GameResult> {
+public class GamesListAdapter extends ArrayAdapter<GameResult> {
 
-    public GamesListAdaptor(Context context, ArrayList<GameResult> results){
+    public GamesListAdapter(Context context, ArrayList<GameResult> results){
         super(context, 0, results);
 
     }
