@@ -3,6 +3,7 @@ package example.codeclan.com.rockpaperscissors;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNotNull;
 
 /**
  * Created by user on 19/04/2017.
@@ -37,5 +38,9 @@ public class GameLogicTest {
         assertEquals( "Computer Wins!",GameLogic.WinChecker("Paper","Scissors") );
     }
 
+    @Test
+    public void randomReturnsString(){
+        assertNotNull(GameLogic.computerChoiceMaker());
+    }
 
 }

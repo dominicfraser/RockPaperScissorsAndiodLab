@@ -1,10 +1,24 @@
 package example.codeclan.com.rockpaperscissors;
 
+import java.util.Random;
+
 /**
  * Created by user on 19/04/2017.
  */
 
 public class GameLogic {
+
+
+    public static String computerChoiceMaker(){
+        String[] choices = {"Rock","Paper","Scissors"};
+        Random numbers = new Random();
+        int randomIndex = numbers.nextInt(3);
+
+
+        return choices[randomIndex];
+
+
+    }
 
     public static String WinChecker(String userChoice, String computerChoice){
         if(userChoice.equals("Rock")){
