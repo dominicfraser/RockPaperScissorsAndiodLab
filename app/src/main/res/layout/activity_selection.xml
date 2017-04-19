@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="example.codeclan.com.rockpaperscissors.SelectionActivity">
+
+    <TextView
+        android:id="@+id/title_and_result"
+        android:text="Make your selection!"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp" />
+
+    <Button
+        android:onClick="onRockClick"
+        android:text="@string/rock_button_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_and_result"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="171dp"
+        android:id="@+id/rock_button" />
+
+    <Button
+        android:onClick="onPaperClick"
+        android:text="@string/paper_button_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/rock_button"
+        android:layout_alignStart="@+id/rock_button"
+        android:id="@+id/paper_button" />
+
+    <Button
+        android:onClick="onScissorsClick"
+        android:text="@string/scissors_button_text"
+        android:id="@+id/scissors_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/paper_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp" />
+
+</RelativeLayout>
