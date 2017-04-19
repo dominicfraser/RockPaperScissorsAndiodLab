@@ -109,7 +109,7 @@
 
     <Button
         android:id="@+id/show_results"
-        android:onClick="OnShowResultsClick"
+        android:onClick="onShowResultsClick"
         android:text="@string/show_results"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
