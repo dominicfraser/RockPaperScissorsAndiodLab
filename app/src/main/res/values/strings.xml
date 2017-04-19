@@ -3,4 +3,6 @@
     <string name="rock_button_text">Rock</string>
     <string name="paper_button_text">Paper</string>
     <string name="scissors_button_text">Scissors</string>
+    <string name="welcome_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="welcome_title">Rock! Paper! Scissors!</string>
 </resources>

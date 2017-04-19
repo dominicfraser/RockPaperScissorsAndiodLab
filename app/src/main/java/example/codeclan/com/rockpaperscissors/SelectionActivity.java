@@ -1,5 +1,6 @@
 package example.codeclan.com.rockpaperscissors;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +22,9 @@ public class SelectionActivity extends AppCompatActivity {
 
         title_and_result = (TextView) findViewById(R.id.title_and_result);
         computerChoice = (TextView) findViewById(R.id.computerChoice);
+
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
     }
 
     public void onRockClick(View text){
