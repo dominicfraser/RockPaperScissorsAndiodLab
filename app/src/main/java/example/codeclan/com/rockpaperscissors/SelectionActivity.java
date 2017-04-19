@@ -45,21 +45,7 @@ public class SelectionActivity extends AppCompatActivity {
 
         title_and_result.setText(result);
         computerChoice.setText("Computer chose: " + computerSelection);
-
-        if(result.equals("Computer Wins!")){
-            Log.d(getClass().toString(), "computer won and in if statement");
-            computerScore += 1;
-            String newComputerScore = String.valueOf(computerScore);
-            computer_score.setText(newComputerScore);
-        }
-        else if(result.equals("Player Wins!")){
-            playerScore += 1;
-            String newPlayerScore = String.valueOf(playerScore);
-            player_score.setText(newPlayerScore);
-        }
-
-
-
+        updateScore(result);
     }
 
     public void onPaperClick(View text){
@@ -71,6 +57,7 @@ public class SelectionActivity extends AppCompatActivity {
 
         title_and_result.setText(result);
         computerChoice.setText("Computer chose: " + computerSelection);
+        updateScore(result);
     }
 
     public void onScissorsClick(View text){
@@ -82,5 +69,18 @@ public class SelectionActivity extends AppCompatActivity {
 
         title_and_result.setText(result);
         computerChoice.setText("Computer chose: " + computerSelection);
+        updateScore(result);
+    }
+
+    public void updateScore(String result) {
+        if (result.equals("Computer Wins!")) {
+            computerScore += 1;
+            String newComputerScore = String.valueOf(computerScore);
+            computer_score.setText(newComputerScore);
+        } else if (result.equals("Player Wins!")) {
+            playerScore += 1;
+            String newPlayerScore = String.valueOf(playerScore);
+            player_score.setText(newPlayerScore);
+        }
     }
 }
