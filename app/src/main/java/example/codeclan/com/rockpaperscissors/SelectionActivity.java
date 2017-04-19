@@ -13,6 +13,10 @@ public class SelectionActivity extends AppCompatActivity {
 
     private TextView title_and_result;
     private TextView computerChoice;
+    private int computerScore;
+    private int playerScore;
+    private TextView computer_score;
+    private TextView player_score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,11 @@ public class SelectionActivity extends AppCompatActivity {
 
         title_and_result = (TextView) findViewById(R.id.title_and_result);
         computerChoice = (TextView) findViewById(R.id.computerChoice);
+        computer_score = (TextView) findViewById(R.id.computer_score);
+        player_score = (TextView) findViewById(R.id.player_score);
+
+        int computerScore = 0;
+        int playerScore = 0;
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -36,6 +45,18 @@ public class SelectionActivity extends AppCompatActivity {
 
         title_and_result.setText(result);
         computerChoice.setText("Computer chose: " + computerSelection);
+
+        if(result.equals("Computer Wins!")){
+            Log.d(getClass().toString(), "computer won and in if statement");
+            computerScore += 1;
+            String newComputerScore = String.valueOf(computerScore);
+            computer_score.setText(newComputerScore);
+        }
+        else if(result.equals("Player Wins!")){
+            playerScore += 1;
+            String newPlayerScore = String.valueOf(playerScore);
+            player_score.setText(newPlayerScore);
+        }
 
 
 
