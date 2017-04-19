@@ -1,14 +1,18 @@
 package example.codeclan.com.rockpaperscissors;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
 /**
  * Created by user on 19/04/2017.
  */
 
-public class GamesList {
+public class GamesList  {
+    //would need to implement Parcelable
 
-    private ArrayList<GameResult> list;
+    private ArrayList<GameResult> list;   //this was made static when parcelable??
 
     public GamesList(){
         list = new ArrayList<GameResult>();
@@ -29,6 +33,34 @@ public class GamesList {
     public GameResult entry(int index) {
         return list.get(index);
     }
+
+    //    PARCELABLE
+    //   NEED HELP
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
+//
+//    @Override
+//    public void writeToParcel(Parcel out, int flags)
+//    {
+//        out.writeTypedList(list);
+//    }
+//
+//    private static GameResult readFromParcel(Parcel in) {
+//        in.readTypedList(list, GameResult.CREATOR);
+//    }
+//
+//    public static final Parcelable.Creator<GamesList> CREATOR =
+//            new Parcelable.Creator<GamesList>() {
+//                public GamesList createFromParcel(Parcel in) {
+//                    return new GamesList(in);
+//                }
+//
+//                public GamesList[] newArray(int size) {
+//                    return new GamesList[size];
+//                }
+//            };
 }
 
 

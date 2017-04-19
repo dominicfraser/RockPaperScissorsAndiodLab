@@ -88,4 +88,16 @@ public class SelectionActivity extends AppCompatActivity {
             player_score.setText(newPlayerScore);
         }
     }
+
+    public void onShowResultsClick(View view){
+        Log.d(getClass().toString(), "show results button pressed");
+
+        Intent intent = new Intent(this,GameResultsListActivity.class);
+
+
+//        intent.putExtra("gamesList",gamesList);
+
+        startActivity(intent);
+    }
 }
+
