@@ -24,4 +24,20 @@ public class GamesListTest {
         assertEquals(1,gamesList.sizeOfList());
     }
 
+    @Test
+    public void canAddMultipleGamesResults(){
+        gamesList.addToList(new GameResult("user choice","computer choice","result1"));
+        gamesList.addToList(new GameResult("user choice","computer choice","result2"));
+        gamesList.addToList(new GameResult("user choice","computer choice","result3"));
+        assertEquals(3,gamesList.sizeOfList());
+    }
+
+    @Test
+    public void canGetUserChoiceFromList(){
+        gamesList.addToList(new GameResult("Rock","computer choice","result1"));
+        gamesList.addToList(new GameResult("Paper","computer choice","result2"));
+        String userChoice =  gamesList.entry(1).getPlayerChoice();
+        assertEquals("Paper",userChoice);
+    }
+
 }

@@ -16,5 +16,17 @@ public class GameResult {
         this.result = result;
     }
 
+    public String getPlayerChoice(){
+        return this.playerChoice;
+    }
+
+    public String getComputerChoice(){
+        return this.computerChoice;
+    }
+
+    public String getResult(){
+        return this.result;
+    }
+
 
 }

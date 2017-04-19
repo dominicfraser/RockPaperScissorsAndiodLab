@@ -25,6 +25,10 @@ public class GamesList {
     public int sizeOfList(){
         return list.size();
     }
+
+    public GameResult entry(int index) {
+        return list.get(index);
+    }
 }
 
 
