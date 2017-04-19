@@ -17,6 +17,7 @@ public class SelectionActivity extends AppCompatActivity {
     private int playerScore;
     private TextView computer_score;
     private TextView player_score;
+    private GamesList gamesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class SelectionActivity extends AppCompatActivity {
         computerChoice = (TextView) findViewById(R.id.computerChoice);
         computer_score = (TextView) findViewById(R.id.computer_score);
         player_score = (TextView) findViewById(R.id.player_score);
+        gamesList = new GamesList();
 
         int computerScore = 0;
         int playerScore = 0;
@@ -46,6 +48,7 @@ public class SelectionActivity extends AppCompatActivity {
         title_and_result.setText(result);
         computerChoice.setText("Computer chose: " + computerSelection);
         updateScore(result);
+        gamesList.addToList(new GameResult(selection, computerSelection, result));
     }
 
     public void onPaperClick(View text){
@@ -58,6 +61,7 @@ public class SelectionActivity extends AppCompatActivity {
         title_and_result.setText(result);
         computerChoice.setText("Computer chose: " + computerSelection);
         updateScore(result);
+        gamesList.addToList(new GameResult(selection, computerSelection, result));
     }
 
     public void onScissorsClick(View text){
@@ -70,6 +74,7 @@ public class SelectionActivity extends AppCompatActivity {
         title_and_result.setText(result);
         computerChoice.setText("Computer chose: " + computerSelection);
         updateScore(result);
+        gamesList.addToList(new GameResult(selection, computerSelection, result));
     }
 
     public void updateScore(String result) {

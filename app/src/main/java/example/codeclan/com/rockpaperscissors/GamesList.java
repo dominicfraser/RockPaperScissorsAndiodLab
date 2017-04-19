@@ -18,6 +18,13 @@ public class GamesList {
         return new ArrayList<GameResult>(list);
     }
 
+    public void addToList(GameResult gameResult){
+        list.add(gameResult);
+    }
+
+    public int sizeOfList(){
+        return list.size();
+    }
 }
 
 
