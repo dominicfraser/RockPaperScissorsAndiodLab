@@ -30,6 +30,7 @@ public class SelectionActivity extends AppCompatActivity {
         computer_score = (TextView) findViewById(R.id.computer_score);
         player_score = (TextView) findViewById(R.id.player_score);
         gamesList = new GamesList();
+        gamesList.addToList(new GameResult("def","def","def"));
 
         int computerScore = 0;
         int playerScore = 0;

@@ -46,6 +46,7 @@ public class GamesList implements Parcelable {
     }
 
     private GamesList(Parcel in) {
+        this();
         in.readTypedList(list, GameResult.CREATOR);
     }
 
