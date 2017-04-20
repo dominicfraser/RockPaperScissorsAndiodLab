@@ -9,10 +9,9 @@ import java.util.ArrayList;
  * Created by user on 19/04/2017.
  */
 
-public class GamesList  {
-    //would need to implement Parcelable
+public class GamesList implements Parcelable {
 
-    private ArrayList<GameResult> list;   //this was made static when parcelable??
+    private ArrayList<GameResult> list;
 
     public GamesList(){
         list = new ArrayList<GameResult>();
@@ -35,32 +34,31 @@ public class GamesList  {
     }
 
     //    PARCELABLE
-    //   NEED HELP
-//    @Override
-//    public int describeContents() {
-//        return 0;
-//    }
-//
-//    @Override
-//    public void writeToParcel(Parcel out, int flags)
-//    {
-//        out.writeTypedList(list);
-//    }
-//
-//    private static GameResult readFromParcel(Parcel in) {
-//        in.readTypedList(list, GameResult.CREATOR);
-//    }
-//
-//    public static final Parcelable.Creator<GamesList> CREATOR =
-//            new Parcelable.Creator<GamesList>() {
-//                public GamesList createFromParcel(Parcel in) {
-//                    return new GamesList(in);
-//                }
-//
-//                public GamesList[] newArray(int size) {
-//                    return new GamesList[size];
-//                }
-//            };
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel out, int flags)
+    {
+        out.writeTypedList(list);
+    }
+
+    private GamesList(Parcel in) {
+        in.readTypedList(list, GameResult.CREATOR);
+    }
+
+    public static final Parcelable.Creator<GamesList> CREATOR =
+            new Parcelable.Creator<GamesList>() {
+                public GamesList createFromParcel(Parcel in) {
+                    return new GamesList(in);
+                }
+
+                public GamesList[] newArray(int size) {
+                    return new GamesList[size];
+                }
+            };
 }
 
 

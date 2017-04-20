@@ -94,12 +94,13 @@ public class SelectionActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this,GameResultsListActivity.class);
 
-        GameResult pGameResult = gamesList.entry(0);
+//        for single result
+//        GameResult pGameResult = gamesList.entry(0);
 //        GameResult pGameResult = new GameResult("Rock","Paper","Computer Wins!");
-        intent.putExtra("SingleGameResultObject",pGameResult);
+//        intent.putExtra("SingleGameResultObject",pGameResult);
 
 // for arraylist?
-//        intent.putExtra("gamesList",gamesList);
+        intent.putExtra("gamesList",gamesList);
 
         startActivity(intent);
     }

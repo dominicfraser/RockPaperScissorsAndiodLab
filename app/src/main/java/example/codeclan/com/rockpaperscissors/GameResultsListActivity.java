@@ -19,15 +19,17 @@ public class GameResultsListActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-        GameResult pGamesResult = extras.getParcelable("SingleGameResultObject");
+
+//        GameResult pGamesResult = extras.getParcelable("SingleGameResultObject");
 
 //          trying to do it for arraylist??
-//        GamesList gamesList = extras.getParcelableArrayList("gamesList");
+        GamesList gamesList = extras.getParcelable("gamesList");
 
-        ArrayList<GameResult> tempList = new ArrayList<GameResult>();
-        tempList.add(pGamesResult);
+//        ArrayList<GameResult> tempList = new ArrayList<GameResult>();
+//        tempList.add(pGamesResult);
+//        GamesListAdapter gamesListAdapter = new GamesListAdapter(this, tempList);
 
-        GamesListAdapter gamesListAdapter = new GamesListAdapter(this, tempList);
+        GamesListAdapter gamesListAdapter = new GamesListAdapter(this, gamesList.getList());
 
         ListView listView = (ListView) findViewById(R.id.games_results_list);
         listView.setAdapter(gamesListAdapter);
